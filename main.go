@@ -1,10 +1,17 @@
 package main
 
 import (
-    "fmt"
+	"log"
+	"net/http"
 )
 
+type Router struct{}
+
+func (rt *Router) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	log.Printf("Method: %s | URL: %s | Header: %s\n", r.Method, r.URL.Path, r.Header)
+	http.NotFound(w, r)
+}
+
 func main() {
-    fmt.Println("Starting strm-bucket Server")
-    fmt.Println("Shutting down strm-bucket Server")
+	http.ListenAndServe(":3900", &Router{})
 }
