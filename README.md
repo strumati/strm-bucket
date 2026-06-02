@@ -24,5 +24,5 @@ Strumat Buckets is a lightweight and efficient object storage service that provi
 ### Installation
 
 ```bash
-git clone https://github.com/your-org/strm-bucket.git
+git clone https://github.com/strumati/strm-bucket.git
 cd strm-bucket
